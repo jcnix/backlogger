@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^accounts/profile', views.profile),
+	url(r'^add', views.add_game),
 ]

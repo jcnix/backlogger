@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Game{% endblock %}
+
+{% block content %}
+
+<div class="row">
+	<form method="post" action="{% url 'log.views.add_game' %}" class="form-inline">
+		<div class="form-group">
+			<input id="search" type="text" class="form-control">
+			<button type="submit" class="btn btn-default">Search</button>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
