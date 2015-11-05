@@ -14,8 +14,6 @@ def profile(request):
 
 @login_required
 def add_game(request):
-	form = GameSearchForm()
-	results = None
 	if request.method == 'POST':
 		form = GameSearchForm(request.POST)
 		#get search results
@@ -23,6 +21,9 @@ def add_game(request):
 			q = form.cleaned_data['query']
 			gb = GBApi()
 			results = gb.search(q)
+	else:
+		form = GameSearchForm()
+		results = None
 
 	context = {'form': form, 'results': results}
 	return render(request, 'log/add_game.html', context)
