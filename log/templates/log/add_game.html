@@ -14,8 +14,17 @@
 	</form>
 </div>
 
-{% for r in results %}
-	<img src="{{ r.image.icon_url }}"> {{ r.name }}<br>
-{% endfor %}
-
+<div class="row">
+	{% for r in results %}
+		<div class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<img src="{{ r.image.small_url }}">
+				<div class="caption">
+					<p><b>{{ r.name }}</b></p>
+					<p><a href="#" class="btn btn-primary" role="button">Add</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
 {% endblock %}
