@@ -3,7 +3,6 @@
 {% block title %}Add Game{% endblock %}
 
 {% block content %}
-
 <div class="row">
 	<form method="POST" action="{% url 'log.views.add_game' %}" class="form-inline">
 		{% csrf_token %}
