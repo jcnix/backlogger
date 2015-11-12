@@ -24,7 +24,7 @@
 					<ul class="nav navbar-nav">
 						<li class="{% if nbar == 'home' %}active{% endif %}"><a href="/">Home</a></li>
 						{% if user.is_authenticated %}
-							<li class="{% if nbar == 'profile' %}active{% endif %}"><a href="accounts/profile">{{ user.username }}</a></li>
+							<li class="{% if nbar == 'profile' %}active{% endif %}"><a href="/accounts/profile">{{ user.username }}</a></li>
 							<li><a href="{% url 'logout' %}">Logout</a></li>
 						{% else %}
 							<li class="{% if nbar == 'login' %}active{% endif %}"><a href="{% url 'login' %}">Login</a></li>
