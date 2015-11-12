@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="row">
-	<form method="POST" action="{% url 'log.views.add_game' %}" class="form-inline">
+	<form method="POST" action="{% url 'log.views.search_game' %}" class="form-inline">
 		{% csrf_token %}
 		{% include 'form.html' %}
 		<div class="form-group">
@@ -20,10 +20,21 @@
 				<img src="{{ r.image.small_url }}">
 				<div class="caption">
 					<p><b>{{ r.name }}</b></p>
-					<p><a href="#" class="btn btn-primary" role="button">Add</a>
+					<p><button id="{{ r.id }}" class="add btn btn-primary" role="button">Add</a>
 				</div>
 			</div>
 		</div>
 	{% endfor %}
 </div>
+
+<script>
+	$(document).ready(function() {
+		$('.add').click(function() {
+			$.ajax({
+				url: "/add/"+$(this).attr('id'),
+			}).done(function() {
+			});
+		});
+	});
+</script>
 {% endblock %}

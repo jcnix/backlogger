@@ -60,3 +60,5 @@ target/
 backlogger/settings.py
 giantbombkey.txt
 db.sqlite3
+jquery*
+bootstrap*

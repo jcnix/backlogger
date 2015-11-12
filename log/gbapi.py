@@ -10,7 +10,7 @@ class GBApi:
 		query_args = {'query': query,
 									'api_key': self.api_key,
 									'resources': 'game',
-									'field_list': 'name,image',
+									'field_list': 'id,name,image',
 									'format': 'json'
 									}
 		args = urllib.urlencode(query_args)
