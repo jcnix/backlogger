@@ -3,5 +3,6 @@
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-	{{username}}
+	{{username}}<br>
+	<a href="{% url 'search_game' %}">Add Games</a>
 {% endblock %}
